@@ -3,11 +3,34 @@
 namespace App\Controllers;
 
 use App\Controllers\BaseController;
+use Faker\Factory;
+
 
 class Catalog extends BaseController
 {
 	public function index()
 	{
-		return d($this);
-	}
+		$faker = Factory::create();
+		
+		$products = [
+			[
+			'title' => $faker->words(2, true), //nb, asText
+			'description' => $faker->words(50, true), //nb, asText
+			'price' => $faker->randomFloat(1,0,50), //nbMaxDecimals, min, max
+			],
+			[
+			'title' => $faker->words(2, true), //nb, asText
+			'description' => $faker->words(50, true), //nb, asText
+			'price' => $faker->randomFloat(1,0,50), //nbMaxDecimals, min, max
+			],
+			[
+			'title' => $faker->words(2, true), //nb, asText
+			'description' => $faker->words(50, true), //nb, asText
+			'price' => $faker->randomFloat(1,0,50), //nbMaxDecimals, min, max
+			]
+		];
+
+		
+		return view('catalog/index', compact('products')); //name
+	} 
 }
