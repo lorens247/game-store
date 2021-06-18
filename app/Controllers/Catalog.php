@@ -3,6 +3,7 @@
 namespace App\Controllers;
 
 use App\Controllers\BaseController;
+use Config\Database;
 use Faker\Factory;
 
 
@@ -11,6 +12,10 @@ class Catalog extends BaseController
 	public function index()
 	{
 		$faker = Factory::create();
+
+		$db = Database::connect();
+
+		d($db->query('show databases')->getResultArray());
 		
 		$products = [
 			[
