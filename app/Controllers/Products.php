@@ -17,5 +17,18 @@ class Products extends BaseController
 		]);
 	}
 
-	
+	public function add()
+	{
+		return view ('products/add'); //name
+	}
+
+	public function edit(int $id)
+	{
+		return view ('products/edit'); //name
+	}
+
+	public function delete(int $id)
+	{
+		
+	}
 }

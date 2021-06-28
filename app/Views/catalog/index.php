@@ -1,7 +1,7 @@
 <?php
 /**
  * @var string $message
- * @var \codeIgniter\View\View $this
+ * @var \CodeIgniter\View\View $this
  * @var array $products
  */
 
