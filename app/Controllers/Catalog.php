@@ -13,9 +13,9 @@ class Catalog extends BaseController
 	{
 		$faker = Factory::create();
 
-		$db = Database::connect();
+		$productsModel = model('Products');
 
-		d($db->query('show databases')->getResultArray());
+		d($productsModel->findAll());
 		
 		$products = [
 			[
