@@ -19,6 +19,7 @@ class Products extends BaseController
 
 	public function add()
 	{
+		helper ('form'); //filename
 		return view ('products/add'); //name
 	}
 
