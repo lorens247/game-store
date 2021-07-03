@@ -6,6 +6,9 @@
 $this->extend('main_template');  //layout
 ?>
 <?php $this->section('content'); //name ?> 
+<?php if (isset($validation)): ?>
+    <?= $validation->listErrors() ?>
+<?php endif; ?>
 
 <?= form_open(current_url(), ['method' =>'post']) ?>
 <div class="form-group">
