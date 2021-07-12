@@ -25,8 +25,8 @@ $this->extend('main_template');  //layout
         <td><?= esc($product['title']) ?> </td>
         <td><?= esc($product['price']) ?> </td>
         <td class="text-right">
-            <a href="#" class="btn btn-primary mb-3 mr-3">Edit</a>
-            <a href="#" class="btn btn-warning mb-3 mr-3">Delete</a>
+            <a href="<?= site_url(['products', 'edit', $product['id']]) ?>" class="btn btn-primary mb-3 mr-3">Edit</a>
+            <a href="<?= site_url(['products', 'delete', $product['id']]) ?>" class="btn btn-warning mb-3 mr-3">Delete</a>
         </td>
     </tr> 
     <?php endforeach; ?>

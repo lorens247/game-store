@@ -37,11 +37,43 @@ class Products extends BaseController
 
 	public function edit(int $id)
 	{
-	
+		helper ('form');
+
+		/** @var \App\Models\Products $productsModel */
+		$productsModel = model('Products');  
+		
+		$entity = $productsModel->find($id);
+
+		if(!$entity) {
+			throw PageNotFoundException::forPageNotFound();
+		} 
+
+		if ($this->request->getMethod() === 'post') {
+			if ($productsModel->update($entity['id'], $this->request->getPost())) {
+				return redirect()->to('/products/index');
+			}
+		}
+		return view('products/edit', [
+			'validation' => $productsModel->getValidation(),
+			'entity' => $entity
+		]); 
 	}
 
 	public function delete(int $id)
 	{
+		helper ('form');
+
+		/** @var \App\Models\Products $productsModel */
+		$productsModel = model('Products');  
 		
+		$entity = $productsModel->find($id);
+
+		if(!$entity) {
+			throw PageNotFoundException::forPageNotFound();
+		} 
+
+		$productsModel->delete($id);
+		
+		return redirect()->to('products/index');
 	}
 }

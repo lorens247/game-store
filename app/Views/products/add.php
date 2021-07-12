@@ -1,6 +1,6 @@
 <?php
 /**
- * @var \codeIgniter\Pager\Pager $pager
+ * @var \codeIgniter\View\View $this
 */
 
 $this->extend('main_template');  //layout
