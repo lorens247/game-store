@@ -9,7 +9,7 @@ $this->extend('main_template');  //layout
 ?>
 <?php $this->section('content') ?>
 
-<div class="text-left">
+<div class="text-right">
     <a href="#" class="btn btn-primary mb-3 mr-3"> Add New</a>
 </div>
 <table class="table">
