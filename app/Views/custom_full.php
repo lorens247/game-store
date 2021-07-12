@@ -33,12 +33,12 @@ $pager->setSurroundCount(2);
 
 		<?php if ($pager->hasNext()) : ?>
 			<li class="page-item">
-				<a class="page-item" href="<?= $pager->getNext() ?>" aria-label="<?= lang('Pager.next') ?>">
+				<a class="page-link" href="<?= $pager->getNext() ?>" aria-label="<?= lang('Pager.next') ?>">
 					<span aria-hidden="true"><?= lang('Pager.next') ?></span>
 				</a>
 			</li>
 			<li class="page-item">
-				<a href="<?= $pager->getLast() ?>" aria-label="<?= lang('Pager.last') ?>">
+				<a class="page-link" href="<?= $pager->getLast() ?>" aria-label="<?= lang('Pager.last') ?>">
 					<span aria-hidden="true"><?= lang('Pager.last') ?></span>
 				</a>
 			</li>
