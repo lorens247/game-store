@@ -8,6 +8,7 @@ use CodeIgniter\HTTP\IncomingRequest;
 use CodeIgniter\HTTP\RequestInterface;
 use CodeIgniter\HTTP\ResponseInterface;
 use Psr\Log\LoggerInterface;
+use CodeIgniter\Services;
 
 /**
  * Class BaseController
@@ -54,5 +55,10 @@ class BaseController extends Controller
 		// Preload any models, libraries, etc, here.
 		//--------------------------------------------------------------------
 		// E.g.: $this->session = \Config\Services::session();
+
+		Services::renderer()->setData([
+			'errors' => (array) session('errors') ?? [], //val:
+			'messages' => (array) session('messages') ?? [], //val:
+		]);
 	}
 }

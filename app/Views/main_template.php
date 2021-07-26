@@ -38,7 +38,8 @@
     </div>
   </header>
 
-  <main> 
+  <main class="container">
+    <?= $this->include('shared/flash_messages') ?>
     <?php $this->renderSection('content') ?>
  
    <footer class="pt-4 my-md-5 pt-md-5 border-top">

@@ -42,7 +42,9 @@ class Login extends BaseController
 				'login' => $user['login']
 			]);
 
-			return redirect()->to('/products');
+			return redirect()->to('/products')
+				->withInput()
+				->with('messages', 'Logged in.');
 		}
 		
 		return view('login/index');

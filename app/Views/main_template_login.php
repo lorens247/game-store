@@ -24,6 +24,7 @@
         
 </header>
 <main class="container">
+    <?= $this->include('shared/flash_messages') ?>
     <?php $this->renderSection('content') ?>
     </main>
 

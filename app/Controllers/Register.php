@@ -9,7 +9,10 @@ class Register extends BaseController
 	public function index()
 	{
 		if (session('isLoggedIn')) { //val
-			return redirect()->to('/products');  //url
+			return redirect()
+			->to('/products')  //url
+			->withInput()
+			->with('errors', 'Already logged in'); //key, message
 		}
 		
 		helper('form');
