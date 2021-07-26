@@ -3,11 +3,15 @@
 namespace App\Controllers;
 
 use App\Controllers\BaseController;
+use CodeIgniter\Exceptions\PageNotFoundException;
 
 class Products extends BaseController
 {
 	public function index()
 	{
+		// d(session('isLoggedIn'));
+		// d(session('userData'));
+		
 		/** @var \App\Models\Products $productsModel */
 		$productsModel = model('Products');
 
