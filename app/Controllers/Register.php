@@ -30,6 +30,8 @@ class Register extends BaseController
 				return redirect()->back()->withInput()->with('errors', $users->errors());
 			}
 
+			Events::trigger('user_created', $user['login']);
+			
 			return redirect()->to('/login')->with(
 				'message','The user has been created.' //key, messages
 			);

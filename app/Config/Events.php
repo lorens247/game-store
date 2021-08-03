@@ -52,3 +52,25 @@ Events::on('pre_system', function () {
 		Services::toolbar()->respond();
 	}
 });
+
+Events::on('user_created',function(string $emailAddress) {
+	$config = [
+		'protocol' => 'smtp',
+		'SMTPHost' => 'smtp.mailtrap.io',
+		'SMTPPort' => 2525,
+		'SMTPUser' => '4a30faf5ad7840',
+		'SMTPPass' => '83851c3ab0ca23',
+		'CRLF' => "\r\n",
+		'newline' => "\r\n",
+	];
+
+	$email = \Config\Services::email($config);
+
+	$email->setFrom('you@example.com', 'CodeIgniter');
+    $email->setTo($emailAddress);
+
+    $email->setSubject('User Created');
+    $email->setMessage('Your User Has been created');
+    
+	$email->send();
+});
