@@ -7,6 +7,7 @@ use App\Controllers\BaseController;
 use CodeIgniter\Services;
 
 class Login extends BaseController
+
 {
 	public function index()
 	{
@@ -48,5 +49,15 @@ class Login extends BaseController
 		}
 		
 		return view('login/index');
+
+	}
+
+	public function logout()
+	{
+		$session = Services::session();
+
+		$session->destroy();
+
+		return redirect()->to('/login');
 	}
 }

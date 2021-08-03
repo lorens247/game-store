@@ -19,7 +19,7 @@ class Users extends Model
 	];
 
 	protected $validationRules = [
-		'login' => 'required|min_length[10]',
+		'login' => 'required|valid_Email',
 		'password' => 'required|min_length[10]',
 	];
 
