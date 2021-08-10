@@ -3,7 +3,7 @@
 namespace App\Controllers;
 
 use App\Controllers\BaseController;
-
+use CodeIgniter\Events\Events;
 class Register extends BaseController
 {
 	public function index()
